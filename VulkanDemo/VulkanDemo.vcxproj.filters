@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{3f45df4e-06ed-40a4-b39b-1d0366acabaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources\VkApp">
+      <UniqueIdentifier>{df7d358d-7b44-414a-a912-b72e2fc8eab4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="VkApp\VkApp.h">
+      <Filter>Sources\VkApp</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="VkApp\VkApp.cpp">
+      <Filter>Sources\VkApp</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
