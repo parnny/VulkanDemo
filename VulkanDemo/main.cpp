@@ -15,7 +15,8 @@ int main() {
 
     VkApp* app = new VkApp();
     app->Init();
-
+	//app->Destroy();
+	//delete app;
 
     glfwInit();
 
