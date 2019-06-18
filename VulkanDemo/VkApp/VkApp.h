@@ -1,6 +1,7 @@
 #pragma once
 #include "include.h"
 #include <list>
+#include <vector>
 
 using namespace std;
 
@@ -8,14 +9,23 @@ class VkApp
 {
 public:
     VkApp();
-    ~VkApp(){};
+    ~VkApp();
 
    VkResult Init();
+   void Destroy();
 
+   void GetPhysicalDeviceinfo();
+   void GetLayerInfo();
+   void GetExtensionInfo();
+
+   VkResult CreateLogicDevice();
 
 
 private:
     VkInstance* mVkInstance;
-    list<VkPhysicalDevice> mVkPhysicalDeviceList;
+	vector<VkPhysicalDevice> mVkPhysicalDeviceList;
+	vector<VkQueueFamilyProperties> mVkQueueFamilyPropertiesList;
+	vector<VkLayerProperties> mVkLayerPropertiesList;
+	vector<VkExtensionProperties> mVkExtensionPropertiesList;
 };
 
