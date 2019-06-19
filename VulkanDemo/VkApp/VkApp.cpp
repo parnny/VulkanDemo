@@ -1,4 +1,8 @@
 #include "VkApp.h"
+#include <Memory/Allocator.h>
+
+
+//#define USE_CUSTOM_ALLOCATOR 0
 
 VkApp::VkApp()
 {
@@ -28,7 +32,17 @@ VkResult VkApp::Init()
     inst_create_info.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
     inst_create_info.pApplicationInfo = &app_info;
 
-    result = vkCreateInstance(&inst_create_info, nullptr, mVkInstance);
+	Allocator allocator;
+	VkAllocationCallbacks allocation_callbacks = (VkAllocationCallbacks)allocator;
+
+#ifdef USE_CUSTOM_ALLOCATOR
+	result = vkCreateInstance(&inst_create_info, &allocation_callbacks, mVkInstance);
+#else
+	result = vkCreateInstance(&inst_create_info, nullptr, mVkInstance);
+#endif // USE_CUSTOM_ALLOCATOR
+
+	result = vkCreateInstance(&inst_create_info, &allocation_callbacks, mVkInstance);
+
     if (result != VK_SUCCESS) return result;
 
     unsigned int physical_device_count = 0;

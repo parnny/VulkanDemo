@@ -7,13 +7,19 @@
     <Filter Include="Sources\VkApp">
       <UniqueIdentifier>{df7d358d-7b44-414a-a912-b72e2fc8eab4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\Memory">
+      <UniqueIdentifier>{6cd4c625-e001-4688-acb2-2b68faf85fdd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include.h">
-      <Filter>Sources</Filter>
-    </ClInclude>
     <ClInclude Include="VkApp\VkApp.h">
       <Filter>Sources\VkApp</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\Allocator.h">
+      <Filter>Sources\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalInclude.h">
+      <Filter>Sources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -22,6 +28,9 @@
     </ClCompile>
     <ClCompile Include="VkApp\VkApp.cpp">
       <Filter>Sources\VkApp</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\Allocator.cpp">
+      <Filter>Sources\Memory</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

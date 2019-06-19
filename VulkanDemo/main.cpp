@@ -8,7 +8,7 @@
 
 #include <iostream>
 
-#include "include.h"
+#include "GlobalInclude.h"
 #include <VkApp/VkApp.h>
 
 int main() {
