@@ -1,5 +1,6 @@
 #include "VkApp.h"
-#include <Memory/Allocator.h>
+#include "Memory/Allocator.h"
+#include "Memory/Resources.h"
 
 
 //#define USE_CUSTOM_ALLOCATOR 0
@@ -11,6 +12,7 @@ VkApp::VkApp()
     mVkQueueFamilyPropertiesList.clear();
     mVkLayerPropertiesList.clear();
     mVkExtensionPropertiesList.clear();
+    mVkLogicDeviceList.clear();
 }
 
 VkApp::~VkApp()
@@ -59,6 +61,8 @@ VkResult VkApp::Init()
 
 	result = CreateLogicDevice();
 
+	Resources* resource = new Resources(&mVkPhysicalDeviceList.front(),&mVkLogicDeviceList.front());
+	resource->Init();
     return result;
 }
 
@@ -144,5 +148,6 @@ VkResult VkApp::CreateLogicDevice()
 
 	VkDevice logic_device;
 	result = vkCreateDevice(mVkPhysicalDeviceList.front(),&deveice_create_info,nullptr,&logic_device);
+	mVkLogicDeviceList.push_back(logic_device);
 	return result;
 }

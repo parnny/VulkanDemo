@@ -20,10 +20,10 @@ public:
 
    VkResult CreateLogicDevice();
 
-
 private:
     VkInstance* mVkInstance;
 	vector<VkPhysicalDevice> mVkPhysicalDeviceList;
+	vector<VkDevice> mVkLogicDeviceList;
 	vector<VkQueueFamilyProperties> mVkQueueFamilyPropertiesList;
 	vector<VkLayerProperties> mVkLayerPropertiesList;
 	vector<VkExtensionProperties> mVkExtensionPropertiesList;

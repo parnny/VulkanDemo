@@ -21,11 +21,13 @@
   <ItemGroup>
     <ClInclude Include="GlobalInclude.h" />
     <ClInclude Include="Memory\Allocator.h" />
+    <ClInclude Include="Memory\Resources.h" />
     <ClInclude Include="VkApp\VkApp.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Memory\Allocator.cpp" />
+    <ClCompile Include="Memory\Resources.cpp" />
     <ClCompile Include="VkApp\VkApp.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
