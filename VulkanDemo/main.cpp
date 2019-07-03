@@ -6,14 +6,14 @@
 #include <glm/vec4.hpp>
 #include <glm/mat4x4.hpp>
 
-#include <iostream>
 
 #include "GlobalInclude.h"
-#include <VkApp/VkApp.h>
+#include <VkApp/VDApp.h>
 
 int main() {
 
-    VkApp* app = new VkApp();
+    VDApp* app = new VDApp();
+    //app->Test();
     app->Init();
 	//app->Destroy();
 	//delete app;

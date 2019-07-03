@@ -3,13 +3,13 @@
 #include <vector>
 #include <assert.h>
 
-void Resources::Init()
+void VDResources::Init()
 {
 	FormatAndSupportInfo();
 	BufferOperation();
 }
 
-void Resources::BufferOperation()
+void VDResources::BufferOperation()
 {
 	VkResult result = VK_SUCCESS;
 
@@ -42,13 +42,16 @@ void Resources::BufferOperation()
 		32,												// range
 	};
 
-	assert(physical_device_properties.limits.maxTexelBufferElements >= (buffer_view_create_info.range*(32)));
-	VkBufferView buffer_view;
-	result = vkCreateBufferView(*mLogicDevice,&buffer_view_create_info,nullptr,&buffer_view);
+// 	assert(physical_device_properties.limits.maxTexelBufferElements >= (buffer_view_create_info.range*(32)));
+// 	VkBufferView buffer_view;
+// 	result = vkCreateBufferView(*mLogicDevice,&buffer_view_create_info,nullptr,&buffer_view);
+
+	vkDestroyBuffer(*mLogicDevice,buffer,nullptr);
+
 	return;
 }
 
-void Resources::ImageOperation()
+void VDResources::ImageOperation()
 {
 	VkImage image = VK_NULL_HANDLE;
 
@@ -72,9 +75,11 @@ void Resources::ImageOperation()
 	};
 
 	vkCreateImage(*mLogicDevice,&image_create_info,nullptr,&image);
+
+	vkDestroyImage(*mLogicDevice,image,nullptr);
 }
 
-void Resources::FormatAndSupportInfo()
+void VDResources::FormatAndSupportInfo()
 {
 	VkFormat fmt = VK_FORMAT_R8G8B8A8_UNORM;
 	vkGetPhysicalDeviceFormatProperties(*mPhysicalDevice,fmt,mFormatProperties);

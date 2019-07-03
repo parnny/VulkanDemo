@@ -1,10 +1,10 @@
 
 #include "GlobalInclude.h"
 
-class Resources
+class VDResources
 {
 public:
-	Resources(VkPhysicalDevice* physical, VkDevice* logic)
+	VDResources(VkPhysicalDevice* physical, VkDevice* logic)
 		: mPhysicalDevice(physical)
 		, mLogicDevice(logic)
 	{

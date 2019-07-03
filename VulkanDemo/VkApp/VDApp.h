@@ -5,20 +5,30 @@
 
 using namespace std;
 
-class VkApp
+class VDApp
 {
 public:
-    VkApp();
-    ~VkApp();
+    VDApp();
+    ~VDApp();
 
-   VkResult Init();
-   void Destroy();
+	void Test();
 
-   void GetPhysicalDeviceinfo();
-   void GetLayerInfo();
-   void GetExtensionInfo();
+	VkResult Init();
+	void Destroy();
 
-   VkResult CreateLogicDevice();
+	void GetPhysicalDeviceinfo();
+	void GetLayerInfo();
+	void GetExtensionInfo();
+
+	VkResult CreateInstance();
+	VkResult CreateLogicDevice();
+
+	VkResult EnumeratePhysicalDevice();
+
+private:
+	void CreateResources();
+	void CreateMemory();
+
 
 private:
     VkInstance* mVkInstance;
@@ -29,3 +39,6 @@ private:
 	vector<VkExtensionProperties> mVkExtensionPropertiesList;
 };
 
+
+struct sample_info {
+};

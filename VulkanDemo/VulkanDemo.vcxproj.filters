@@ -12,9 +12,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="VkApp\VkApp.h">
-      <Filter>Sources\VkApp</Filter>
-    </ClInclude>
     <ClInclude Include="Memory\Allocator.h">
       <Filter>Sources\Memory</Filter>
     </ClInclude>
@@ -24,19 +21,28 @@
     <ClInclude Include="Memory\Resources.h">
       <Filter>Sources\Memory</Filter>
     </ClInclude>
+    <ClInclude Include="Memory\Memory.h">
+      <Filter>Sources\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="VkApp\VDApp.h">
+      <Filter>Sources\VkApp</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="VkApp\VkApp.cpp">
-      <Filter>Sources\VkApp</Filter>
     </ClCompile>
     <ClCompile Include="Memory\Allocator.cpp">
       <Filter>Sources\Memory</Filter>
     </ClCompile>
     <ClCompile Include="Memory\Resources.cpp">
       <Filter>Sources\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\Memory.cpp">
+      <Filter>Sources\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="VkApp\VDApp.cpp">
+      <Filter>Sources\VkApp</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

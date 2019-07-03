@@ -1,16 +1,16 @@
 #include "GlobalInclude.h"
 
 
-class Allocator
+class VDAllocator
 {
 public:
 	inline operator VkAllocationCallbacks() const
 	{
 		VkAllocationCallbacks result;
 		result.pUserData = (void*)this;
-		result.pfnAllocation = &Allocator::Allocation;
-		result.pfnReallocation = &Allocator::Reallcation;
-		result.pfnFree = &Allocator::Free;
+		result.pfnAllocation = &VDAllocator::Allocation;
+		result.pfnReallocation = &VDAllocator::Reallcation;
+		result.pfnFree = &VDAllocator::Free;
 		result.pfnInternalAllocation = nullptr;
 		result.pfnInternalFree = nullptr;
 		return result;
